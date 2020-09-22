@@ -265,7 +265,7 @@ namespace SFML.Window
         /// <summary>
         /// Set the displayed cursor to a native system cursor
         /// </summary>
-        /// <param name="enable">True to enable v-sync, false to deactivate</param>
+        /// <param name="cursor">Native system cursor type to display</param>
         ////////////////////////////////////////////////////////////
         public virtual void SetMouseCursor(Cursor cursor)
         {
@@ -636,6 +636,8 @@ namespace SFML.Window
 
                     break;
 
+// Disable CS0618 (Obselete Warning).  This Event will be removed in SFML.NET 3.0, but should remain supported until then.
+#pragma warning disable CS0618
                 case EventType.MouseWheelMoved:
                     if (MouseWheelMoved != null)
                     {
@@ -643,6 +645,8 @@ namespace SFML.Window
                     }
 
                     break;
+// restore CS0618
+#pragma warning restore CS0618
 
                 case EventType.MouseWheelScrolled:
                     if (MouseWheelScrolled != null)
